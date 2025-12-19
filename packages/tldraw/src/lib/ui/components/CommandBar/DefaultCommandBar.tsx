@@ -53,7 +53,7 @@ export function DefaultCommandBar({ isOpen, onClose }: TldrawUiCommandBarProps) 
 
 	// Memoize search query and filtering with improved algorithm and scoring
 	const filteredActions = React.useMemo(() => {
-		if (!query) return baseActions
+		if (!query) return baseActions.slice(0, 6)
 
 		const lowerQuery = query.toLowerCase().trim()
 
