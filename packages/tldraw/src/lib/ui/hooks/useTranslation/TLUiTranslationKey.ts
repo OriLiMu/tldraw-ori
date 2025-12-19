@@ -490,3 +490,6 @@ export type TLUiTranslationKey =
 	| 'ui.close'
 	| 'ui.checked'
 	| 'ui.unchecked'
+	| 'command-bar.placeholder'
+	| 'command-bar.no-results'
+	| 'command-bar.clear'

@@ -14,6 +14,7 @@ import { useActions } from './context/actions'
 import { useBreakpoint } from './context/breakpoints'
 import { TLUiComponents, useTldrawUiComponents } from './context/components'
 import { useNativeClipboardEvents } from './hooks/useClipboardEvents'
+import { useCommandBar } from './hooks/useCommandBar'
 import { useEditorEvents } from './hooks/useEditorEvents'
 import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts'
 import { useReadonly } from './hooks/useReadonly'
@@ -115,7 +116,10 @@ const TldrawUiContent = React.memo(function TldrawUI() {
 		Toasts,
 		Dialogs,
 		A11y,
+		CommandBar,
 	} = useTldrawUiComponents()
+
+	const commandBar = useCommandBar()
 
 	useEditorEvents()
 
@@ -223,6 +227,7 @@ const TldrawUiContent = React.memo(function TldrawUI() {
 			)}
 			{Toasts && <Toasts />}
 			{Dialogs && <Dialogs />}
+			{CommandBar && <CommandBar isOpen={commandBar.isOpen} onClose={commandBar.closeCommandBar} />}
 		</div>
 	)
 })

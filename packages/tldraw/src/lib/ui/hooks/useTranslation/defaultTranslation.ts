@@ -500,4 +500,7 @@ export const DEFAULT_TRANSLATION = {
 	'ui.close': 'Close',
 	'ui.checked': 'Checked',
 	'ui.unchecked': 'Unchecked',
+	'command-bar.placeholder': 'Type a command...',
+	'command-bar.no-results': 'No results found',
+	'command-bar.clear': 'Clear',
 }

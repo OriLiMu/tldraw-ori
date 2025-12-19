@@ -51,6 +51,8 @@ export interface TLUiActionItem<
 	checkbox?: boolean
 	isRequiredA11yAction?: boolean
 	onSelect(source: TLUiEventSource): Promise<void> | void
+	enabled?(editor: Editor): boolean
+	disabledDescription?: TransationKey
 }
 
 /** @public */
@@ -196,6 +198,7 @@ export function ActionsProvider({ overrides, children }: ActionsProviderProps) {
 				label: 'action.undo',
 				icon: 'undo',
 				kbd: 'cmd+z,ctrl+z',
+				disabledDescription: 'command-bar.nothing-to-undo',
 				onSelect(source) {
 					trackEvent('undo', { source })
 					editor.undo()
@@ -206,6 +209,8 @@ export function ActionsProvider({ overrides, children }: ActionsProviderProps) {
 				label: 'action.redo',
 				icon: 'redo',
 				kbd: 'cmd+shift+z,ctrl+shift+z',
+				enabled: (editor) => editor.canRedo(),
+				disabledDescription: 'command-bar.nothing-to-redo',
 				onSelect(source) {
 					trackEvent('redo', { source })
 					editor.redo()

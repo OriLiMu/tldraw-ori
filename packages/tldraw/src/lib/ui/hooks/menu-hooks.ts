@@ -208,3 +208,21 @@ export function useCanUndo() {
 	const editor = useEditor()
 	return useValue('useCanUndo', () => editor.getCanUndo(), [editor])
 }
+
+/** @public */
+export function useIsReadonly() {
+	const editor = useEditor()
+	return useValue('useIsReadonly', () => editor.getIsReadonly(), [editor])
+}
+
+/** @public */
+export function useIsFocused() {
+	const editor = useEditor()
+	return useValue('useIsFocused', () => editor.getIsFocused(), [editor])
+}
+
+/** @public */
+export function useGetCurrentTool() {
+	const editor = useEditor()
+	return useValue('useGetCurrentTool', () => editor.getCurrentToolId(), [editor])
+}

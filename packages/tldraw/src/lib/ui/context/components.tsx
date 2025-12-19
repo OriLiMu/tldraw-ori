@@ -5,6 +5,7 @@ import {
 	DefaultActionsMenu,
 	TLUiActionsMenuProps,
 } from '../components/ActionsMenu/DefaultActionsMenu'
+import { DefaultCommandBar } from '../components/CommandBar/DefaultCommandBar'
 import {
 	DefaultContextMenu,
 	TLUiContextMenuProps,
@@ -74,6 +75,7 @@ export interface TLUiComponents {
 	Toasts?: ComponentType | null
 	A11y?: ComponentType | null
 	FollowingIndicator?: ComponentType | null
+	CommandBar?: ComponentType<any> | null
 }
 
 const TldrawUiComponentsContext = createContext<TLUiComponents | null>(null)
@@ -122,6 +124,7 @@ export function TldrawUiComponentsProvider({
 					Toasts: DefaultToasts,
 					A11y: DefaultA11yAnnouncer,
 					FollowingIndicator: DefaultFollowingIndicator,
+					CommandBar: DefaultCommandBar,
 					..._overrides,
 				}),
 				[_overrides, showCollaborationUi]
