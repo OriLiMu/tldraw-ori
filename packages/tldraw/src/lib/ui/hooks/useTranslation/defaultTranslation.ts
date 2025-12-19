@@ -503,4 +503,10 @@ export const DEFAULT_TRANSLATION = {
 	'command-bar.placeholder': 'Type a command...',
 	'command-bar.no-results': 'No results found',
 	'command-bar.clear': 'Clear',
+	'command-bar.nothing-to-undo': 'Nothing to undo',
+	'command-bar.nothing-to-redo': 'Nothing to redo',
+	'command-bar.title': 'Command Palette',
+	'command-bar.results': 'Search results',
+	'command-bar.results-count': 'results available',
+	'command-bar.close': 'Close command palette',
 }

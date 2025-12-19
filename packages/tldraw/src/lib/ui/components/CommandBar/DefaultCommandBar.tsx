@@ -108,7 +108,7 @@ export function DefaultCommandBar({ isOpen, onClose }: TldrawUiCommandBarProps) 
 			.sort((a, b) => b.score - a.score) // Sort by score (highest first)
 			.map((item) => item.action)
 
-		return scoredActions
+		return scoredActions.slice(0, 6)
 	}, [baseActions, query])
 
 	// Handle focus management when command bar opens
