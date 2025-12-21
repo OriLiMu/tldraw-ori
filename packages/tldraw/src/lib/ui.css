@@ -3953,12 +3953,13 @@ tldraw? probably.
 	height: 300px;
 }
 
-.tlui-command-bar__content {
+.tlui-command-bar {
 	pointer-events: all;
 	box-shadow: var(--shadow-2);
 	overflow: hidden;
-	border-radius: var(--radius-3);
-	background: var(--color-background);
+	border-radius: var(--tl-radius-4);
+	background: hsl(240, 5%, 20%);
+	border: 2px solid hsl(240, 5%, 12%);
 }
 
 .tlui-command-bar__content-inner {
@@ -3974,8 +3975,10 @@ tldraw? probably.
 	width: 100%;
 	border: none;
 	padding: var(--space-3);
-	background: var(--color-background);
+	background: hsl(240, 5%, 20%);
 	color: var(--color-text-1);
+	font-size: 18px;
+	border-radius: var(--tl-radius-2);
 }
 
 .tlui-command-bar__item-wrapper {
@@ -3983,17 +3986,28 @@ tldraw? probably.
 }
 
 .tlui-command-bar__item {
-	border-radius: var(--radius-2);
+	border-radius: var(--tl-radius-2);
 	display: flex;
 	align-items: center;
+	background: hsla(240, 5%, 20%, 0.7);
+	font-size: 18px;
+	padding: var(--space-3);
+	margin: 0;
+	border-bottom: 1px solid hsl(240, 5%, 15%);
 }
 
 .tlui-command-bar__item-selected {
-	background: var(--color-hint);
+	background: hsla(240, 5%, 25%, 0.7);
+	border: 1px solid hsl(240, 5%, 12%);
+}
+
+.tlui-command-bar__item:last-child {
+	border-bottom: none;
 }
 
 .tlui-command-bar__item-disabled-description {
 	color: var(--color-text-3);
-	font-size: 10px;
+	font-size: 15px;
 	padding: var(--space-2);
 }
+
