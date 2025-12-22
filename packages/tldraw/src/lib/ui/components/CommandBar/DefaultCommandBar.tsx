@@ -491,16 +491,16 @@ export function DefaultCommandBar({ isOpen, onClose }: TldrawUiCommandBarProps) 
 				>
 					{actionItems}
 				</div>
-				<div
-					id="command-bar-instructions"
-					className="tlui-command-bar__instructions"
-					aria-live="polite"
-					aria-atomic="true"
-				>
-					{filteredActions.length > 0
-						? `${filteredActions.length} ${msg('command-bar.results-count') || 'results available'}`
-						: msg('command-bar.no-results') || 'No results found'}
-				</div>
+				{filteredActions.length > 0 && (
+					<div
+						id="command-bar-instructions"
+						className="tlui-command-bar__instructions"
+						aria-live="polite"
+						aria-atomic="true"
+					>
+						{`${filteredActions.length} ${msg('command-bar.results-count') || 'results available'}`}
+					</div>
+				)}
 			</div>
 			<div
 				className="tlui-command-bar__backdrop"
