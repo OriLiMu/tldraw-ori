@@ -214,7 +214,7 @@ export function DefaultCommandBar({ isOpen, onClose }: TldrawUiCommandBarProps) 
 					}, 0)
 					break
 				case 'Backspace':
-					// Allow clearing with Backspace when query is empty and input is focused
+					// Allow closing with Backspace when query is empty and input is focused
 					if (query === '' && document.activeElement === inputRef.current) {
 						e.preventDefault()
 						onClose()
@@ -222,10 +222,8 @@ export function DefaultCommandBar({ isOpen, onClose }: TldrawUiCommandBarProps) 
 						setTimeout(() => {
 							editor.focus()
 						}, 0)
-					} else if (query.length > 0) {
-						e.preventDefault()
-						handleClearQuery()
 					}
+					// When query has text, let browser handle normal backspace behavior
 					break
 				case 'Delete':
 					// Allow clearing with Delete when query is empty and input is focused
@@ -472,17 +470,6 @@ export function DefaultCommandBar({ isOpen, onClose }: TldrawUiCommandBarProps) 
 						aria-describedby="command-bar-instructions"
 						autoFocus
 					/>
-					{query && (
-						<button
-							className="tlui-command-bar__clear"
-							onClick={handleClearQuery}
-							title={msg('command-bar.clear') || 'Clear'}
-							aria-label={msg('command-bar.clear') || 'Clear search query'}
-							type="button"
-						>
-							×
-						</button>
-					)}
 				</div>
 				<div
 					className="tlui-command-bar__list"
