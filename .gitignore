@@ -122,3 +122,6 @@ license-report.md
 
 # TypeScript profiling
 .ts-profile
+
+# Auto Claude data directory
+.auto-claude/
