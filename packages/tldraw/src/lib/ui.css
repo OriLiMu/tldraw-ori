@@ -3977,7 +3977,7 @@ tldraw? probably.
 	padding: var(--space-3);
 	background: hsl(240, 5%, 20%);
 	color: var(--color-text-1);
-	font-size: 18px;
+	font-size: 16px;
 	border-radius: var(--tl-radius-2);
 }
 
@@ -3990,7 +3990,7 @@ tldraw? probably.
 	display: flex;
 	align-items: center;
 	background: hsla(240, 5%, 20%, 0.7);
-	font-size: 18px;
+	font-size: 16px;
 	padding: var(--space-3);
 	margin: 0;
 	border-bottom: 1px solid hsl(240, 5%, 15%);
